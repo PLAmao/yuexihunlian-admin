@@ -10,10 +10,14 @@
       <div class="form-wrapper">
         <el-form :rules="rules" ref="form" :model="formData">
           <el-form-item prop="username">
-            <el-input placeholder="用户名" required v-model="formData.username"></el-input>
+            <el-input placeholder="用户名" required v-model="formData.username">
+              <i class="icon-email bg-full" slot="prefix"></i>
+            </el-input>
           </el-form-item>
           <el-form-item prop="password">
-            <el-input placeholder="密码" type="password" required v-model="formData.password"></el-input>
+            <el-input placeholder="密码" type="password" required v-model="formData.password">
+              <i class="icon-lock bg-full" slot="prefix"></i>
+            </el-input>
           </el-form-item>
           <el-form-item>
             <div class="poi btn-login" @click="login">登录</div>
@@ -101,7 +105,30 @@ export default {
     color: #999999;
     margin-top: 190px;
   }
+  .icon-email {
+    display: inline-block;
+    width: 21px;
+    height: 18px;
+    background-image: url(~@/assets/img/icon/email.png);
+  }
+  .icon-lock {
+    display: inline-block;
+    height: 21px;
+    width: 18px;
+    background-image: url(~@/assets/img/icon/lock.png);
+  }
+
   ::v-deep {
+    .el-input--prefix .el-input__inner {
+      padding-left: 56px;
+    }
+    .el-input__prefix {
+      width: 56px;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .el-input__inner {
       font-size: 16px;
       height: 48px;

@@ -10,7 +10,9 @@
         <div class="arrow bg-full poi"></div>
       </div>
     </div>
-    <router-view />
+    <div class="main auto">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -35,7 +37,7 @@ export default {}
     width: 130px;
     height: 40px;
     background-image: url(~@/assets/img/home/logo.png);
-    margin-right: 300px;
+    margin-right: 147px;
   }
   .tab-item {
     height: 100%;
@@ -72,5 +74,8 @@ export default {}
       margin-left: 10px;
     }
   }
+}
+.main {
+  width: 1200px;
 }
 </style>
